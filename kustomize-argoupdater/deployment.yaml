@@ -1,26 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myweb-nginx
+  name: sample
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: sample
   template:
     metadata:
       labels:
-        app: nginx
+        app: sample
     spec:
       containers:
-        - image: docker.io/codingalice/argoupdater:1.0
-        name: nginx
+      - image: docker.io/codingalice/argoupdater:1.0
+        name: sample
         ports:
         - containerPort: 80
-        resources:
-          requests:
-            cpu: 200m
-            memory: 200Mi
-          limits:
-            cpu: 200m
-            memory: 200Mi
